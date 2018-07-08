@@ -1,0 +1,13 @@
+:host ::ng-deep .mat-tab-label {
+  cursor: default;
+}
+.tab_close {
+  margin-left: 15px;
+  width: 15px;
+  height: 15px;
+  font-size: 18px;
+  cursor: pointer;
+}
+.tab_close:hover {
+  color: red;
+}
