@@ -1,23 +1,21 @@
-var ReuseTabStrategy = /** @class */ (function () {
-    function ReuseTabStrategy(srv) {
+export class ReuseTabStrategy {
+    constructor(srv) {
         this.srv = srv;
     }
-    ReuseTabStrategy.prototype.shouldDetach = function (route) {
+    shouldDetach(route) {
         return this.srv.shouldDetach(route);
-    };
-    ReuseTabStrategy.prototype.store = function (route, handle) {
+    }
+    store(route, handle) {
         this.srv.store(route, handle);
-    };
-    ReuseTabStrategy.prototype.shouldAttach = function (route) {
+    }
+    shouldAttach(route) {
         return this.srv.shouldAttach(route);
-    };
-    ReuseTabStrategy.prototype.retrieve = function (route) {
+    }
+    retrieve(route) {
         return this.srv.retrieve(route);
-    };
-    ReuseTabStrategy.prototype.shouldReuseRoute = function (future, curr) {
+    }
+    shouldReuseRoute(future, curr) {
         return this.srv.shouldReuseRoute(future, curr);
-    };
-    return ReuseTabStrategy;
-}());
-export { ReuseTabStrategy };
+    }
+}
 //# sourceMappingURL=reuse-tab.strategy.js.map

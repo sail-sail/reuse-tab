@@ -11,7 +11,9 @@ module: AdReuseTabModule
 
 ## 如何使用？
 
-默认 `AdReuseTabModule` 并不会注册 `RouteReuseStrategy`，除了引入模块以外，还需要在**手动注册** `RouteReuseStrategy`。
+`npm install --save reuse-tab`
+
+默认 `AdReuseTabModule` 并不会注册 `RouteReuseStrategy`，这是因为若默认在模块内注册会导致所有引入 `@delon/abc` 模块都会强制使用路由复用，不管是否模板是否包括 `<reuse-tab>`。因此，除了引入模块以外，还需要在**手动注册** `RouteReuseStrategy`。
 
 ```ts
 // delon.module.ts or app.module.ts
@@ -20,8 +22,7 @@ providers: [
     provide: RouteReuseStrategy,
     useClass: ReuseTabStrategy,
     deps: [ReuseTabService],
-  },
-  ReuseTabService
+  }
 ]
 ```
 

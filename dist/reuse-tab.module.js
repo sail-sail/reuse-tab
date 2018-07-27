@@ -5,37 +5,34 @@ import { ReuseTabComponent } from './reuse-tab.component';
 import { ReuseTabContextComponent } from './reuse-tab-context.component';
 import { ReuseTabContextDirective } from './reuse-tab-context.directive';
 import { ReuseTabContextMenuComponent } from './reuse-tab-context-menu.component';
-var COMPONENTS = [ReuseTabComponent];
-var NOEXPORTS = [
+const COMPONENTS = [ReuseTabComponent];
+const NOEXPORTS = [
     ReuseTabContextMenuComponent,
     ReuseTabContextComponent,
     ReuseTabContextDirective,
 ];
 import { OverlayModule } from '@angular/cdk/overlay';
-import { MatMenuModule, MatTabsModule, MatIconModule } from '@angular/material';
-var AdReuseTabModule = /** @class */ (function () {
-    function AdReuseTabModule() {
-    }
-    AdReuseTabModule.forRoot = function () {
+import { MatMenuModule, MatTabsModule, MatIconModule, MatButtonModule } from '@angular/material';
+export class AdReuseTabModule {
+    static forRoot() {
         return {
             ngModule: AdReuseTabModule,
         };
-    };
-    AdReuseTabModule.decorators = [
-        { type: NgModule, args: [{
-                    imports: [CommonModule, RouterModule, OverlayModule,
-                        MatMenuModule,
-                        MatTabsModule,
-                        MatIconModule,
-                    ],
-                    declarations: COMPONENTS.concat(NOEXPORTS),
-                    entryComponents: [ReuseTabContextMenuComponent],
-                    exports: COMPONENTS.slice(),
-                },] },
-    ];
-    /** @nocollapse */
-    AdReuseTabModule.ctorParameters = function () { return []; };
-    return AdReuseTabModule;
-}());
-export { AdReuseTabModule };
+    }
+}
+AdReuseTabModule.decorators = [
+    { type: NgModule, args: [{
+                imports: [CommonModule, RouterModule, OverlayModule,
+                    MatMenuModule,
+                    MatTabsModule,
+                    MatIconModule,
+                    MatButtonModule,
+                ],
+                declarations: [...COMPONENTS, ...NOEXPORTS],
+                entryComponents: [ReuseTabContextMenuComponent],
+                exports: [...COMPONENTS],
+            },] },
+];
+/** @nocollapse */
+AdReuseTabModule.ctorParameters = () => [];
 //# sourceMappingURL=reuse-tab.module.js.map

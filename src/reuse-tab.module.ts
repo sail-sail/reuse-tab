@@ -15,13 +15,14 @@ const NOEXPORTS = [
 ];
 
 import { OverlayModule } from '@angular/cdk/overlay';
-import { MatMenuModule, MatTabsModule, MatIconModule } from '@angular/material';
+import { MatMenuModule, MatTabsModule, MatIconModule, MatButtonModule } from '@angular/material';
 
 @NgModule({
   imports: [CommonModule, RouterModule, OverlayModule,
     MatMenuModule,
     MatTabsModule,
     MatIconModule,
+    MatButtonModule,
   ],
   declarations: [...COMPONENTS, ...NOEXPORTS],
   entryComponents: [ReuseTabContextMenuComponent],

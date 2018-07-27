@@ -1,9 +1,9 @@
 {
    "name": "reuse-tab",
-   "version": "1.0.0",
+   "version": "1.0.1",
    "description": "angular material reuse-tab",
-   "main": "./dest/index.js",
-   "types": "./dest/index.d.ts",
+   "main": "./dist/index.js",
+   "types": "./dist/index.d.ts",
    "scripts": {
       "test": "echo \"Error: no test specified\" && exit 1",
       "build:library": "nglb --rootDir src --outDir dist"

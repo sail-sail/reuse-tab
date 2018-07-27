@@ -1,0 +1,8 @@
+/node_modules
+.gitignore
+.git
+.vscode
+.npmignore
+/src
+tsconfig-ngc.json
+README.md

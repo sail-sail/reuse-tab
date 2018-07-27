@@ -1,0 +1,15 @@
+{
+    "typescript.tsdk": "${workspaceRoot}\\node_modules\\typescript\\lib",
+    "vsicons.presets.angular": true,
+    "editor.trimAutoWhitespace": false,
+    "files.trimTrailingWhitespace": false,
+    "editor.snippetSuggestions": "top",
+    "files.exclude": {
+        ".vscode": true,
+        "node_modules": true
+    },
+    "search.exclude": {
+        ".vscode": true,
+        "node_modules": true
+    }
+}
