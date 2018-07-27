@@ -11,6 +11,10 @@ module: AdReuseTabModule
 
 ## 如何使用？
 
+```
+npm install --save reuse-tab
+```
+
 默认 `AdReuseTabModule` 并不会注册 `RouteReuseStrategy`，除了引入模块以外，还需要在**手动注册** `RouteReuseStrategy`。
 
 ```ts
@@ -182,3 +186,5 @@ export class DemoComponent {
 **右击菜单**
 
 当按下键盘 `ctrl` 时会强制移除不可关闭项。
+
+此项目参考自: <a href="https://ng-alain.com" target="_blank">ng-alain</a>
