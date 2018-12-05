@@ -3,6 +3,9 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "target": "es2016"
+    "target": "es5",
+    "lib": [
+      "esnext"
+    ]
   }
 }
