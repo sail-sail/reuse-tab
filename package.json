@@ -1,12 +1,12 @@
 {
    "name": "reuse-tab",
-   "version": "1.0.2",
+   "version": "1.0.3",
    "description": "angular material reuse-tab",
    "main": "./dist/index.js",
    "types": "./dist/index.d.ts",
    "scripts": {
       "test": "echo \"Error: no test specified\" && exit 1",
-      "build:library": "nglb --rootDir src --outDir dist"
+      "build": "ng-packagr -p package.json"
    },
    "repository": {
       "type": "git",
@@ -19,47 +19,39 @@
    ],
    "author": "Sail",
    "license": "MIT",
+   "ngPackage": {
+      "lib": {
+         "entryFile": "src/public_api.ts"
+      }
+   },
    "bugs": {
       "url": "https://github.com/sail-sail/reuse-tab/issues"
    },
    "homepage": "https://github.com/sail-sail/reuse-tab#readme",
-   "peerDependencies": {
-      "@angular/animations": "^6.1.0",
-      "@angular/cdk": "^6.4.1",
-      "@angular/common": "^6.1.0",
-      "@angular/core": "^6.1.0",
-      "@angular/http": "^6.1.0",
-      "@angular/material": "^6.4.1",
-      "@angular/platform-browser": "^6.1.0",
-      "@angular/platform-browser-dynamic": "^6.1.0",
-      "core-js": "^2.5.7",
-      "rxjs": "^6.2.2",
-      "rxjs-compat": "^6.2.2",
-      "zone.js": "^0.8.26"
-   },
    "devDependencies": {
-      "@angular/animations": "^6.1.0",
-      "@angular/cdk": "^6.4.1",
-      "@angular/common": "^6.1.0",
-      "@angular/compiler": "^6.1.0",
-      "@angular/core": "^6.1.0",
-      "@angular/forms": "^6.1.0",
-      "@angular/http": "^6.1.0",
-      "@angular/material": "^6.4.1",
-      "@angular/platform-browser": "^6.1.0",
-      "@angular/platform-browser-dynamic": "^6.1.0",
-      "@angular/pwa": "^0.7.1",
-      "@angular/router": "^6.1.0",
-      "@angular/service-worker": "^6.1.0",
-      "core-js": "^2.5.7",
-      "rxjs": "^6.2.2",
-      "rxjs-compat": "^6.2.2",
-      "zone.js": "^0.8.26",
-      "@angular/compiler-cli": "^6.1.0",
-      "@angular-devkit/build-angular": "~0.7.1",
-      "typescript": "~2.9.2",
-      "@angular/cli": "~6.1.1",
-      "@angular/language-service": "^6.1.0",
-      "angular-library-builder": "^1.6.3"
+      "@angular-devkit/build-angular": "0.11.1",
+      "@angular/animations": "7.1.1",
+      "@angular/cdk": "7.1.1",
+      "@angular/cli": "7.1.1",
+      "@angular/common": "7.1.1",
+      "@angular/compiler": "7.1.1",
+      "@angular/compiler-cli": "7.1.1",
+      "@angular/core": "7.1.1",
+      "@angular/forms": "7.1.1",
+      "@angular/http": "7.1.1",
+      "@angular/language-service": "7.1.1",
+      "@angular/material": "7.1.1",
+      "@angular/platform-browser": "7.1.1",
+      "@angular/platform-browser-dynamic": "7.1.1",
+      "@angular/pwa": "0.11.1",
+      "@angular/router": "7.1.1",
+      "@angular/service-worker": "7.1.1",
+      "core-js": "2.6.0",
+      "ng-packagr": "4.4.5",
+      "rxjs": "6.3.3",
+      "rxjs-compat": "6.3.3",
+      "tsickle": "0.34.0",
+      "typescript": "3.1.6",
+      "zone.js": "0.8.26"
    }
 }
