@@ -24,9 +24,16 @@ import { MatMenuModule, MatTabsModule, MatIconModule, MatButtonModule } from '@a
     MatIconModule,
     MatButtonModule,
   ],
-  declarations: [...COMPONENTS, ...NOEXPORTS],
+  declarations: [
+    ReuseTabComponent,
+    ReuseTabContextMenuComponent,
+    ReuseTabContextComponent,
+    ReuseTabContextDirective,
+  ],
   entryComponents: [ReuseTabContextMenuComponent],
-  exports: [...COMPONENTS],
+  exports: [
+    ReuseTabComponent,
+  ],
 })
 export class AdReuseTabModule {
   static forRoot(): ModuleWithProviders {
