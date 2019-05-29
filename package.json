@@ -1,6 +1,6 @@
 {
    "name": "reuse-tab",
-   "version": "1.0.5",
+   "version": "1.0.6",
    "description": "angular material reuse-tab",
    "main": "./dist/index.js",
    "types": "./public_api.d.ts",
