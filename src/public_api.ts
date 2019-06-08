@@ -7,5 +7,4 @@ export {
   ReuseTabCached,
   ReuseTabNotify,
   ReuseItem,
-  ReuseContextI18n,
 } from './interface';

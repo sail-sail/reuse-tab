@@ -1,10 +1,20 @@
-:host ::ng-deep .mat-tab-label {
-  cursor: default;
+:host ::ng-deep {
+  .mat-tab-label {
+    cursor: default;
+  }
+  .mat-tab-label :hover {
+    font-weight: bold;
+  }
+  .mat-tab-label-active {
+    font-weight: bold;
+    color: black;
+    background-color: rgba(200,200,200,.8);
+  }
 }
 .tab_close {
   margin-left: 12px;
   cursor: pointer;
 }
-.tab_close:hover {
+.tab_close :hover {
   color: red;
 }

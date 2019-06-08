@@ -3,7 +3,7 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "target": "es5",
+    "target": "es2015",
     "lib": [
       "esnext"
     ]

@@ -169,7 +169,6 @@ export class DemoComponent {
 
 参数 | 说明 | 类型 | 默认值
 ----|------|-----|------
-`[i18n]` | 右击菜单国际化，支持HTML | `ReuseContextI18n` | -
 `[mode]` | 设置匹配模式 | `ReuseTabMatchMode` | `0`
 `[debug]` | 是否Debug模式 | `boolean` | `false`
 `[max]` | 允许最多复用多少个页面 | `number` | `10`

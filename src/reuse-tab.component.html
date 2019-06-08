@@ -1,21 +1,10 @@
-<!-- <nz-tabset [nzSelectedIndex]="pos" [nzAnimated]="false" nzType="line">
-  <nz-tab *ngFor="let i of list; let index = index" [nzTitle]="titleTemplate">
-    <ng-template #titleTemplate>
-      <span [context-menu]="i" (click)="to($event, index)" class="name">{{i.title}}</span>
-      <i *ngIf="i.closable" class="anticon anticon-close op" (click)="_close($event, index, false)"></i>
-    </ng-template>
-  </nz-tab>
-</nz-tabset>
-<reuse-tab-context (change)="cmChange($event)"></reuse-tab-context> -->
-
-<mat-tab-group [selectedIndex]="pos" (selectedIndexChange)="selectedIndexChange($event)">
-  <mat-tab *ngFor="let i of list; let index = index" [context-menu]="i">
+<mat-tab-group [(selectedIndex)]="pos" (selectedIndexChange)="selectedIndexChange($event)">
+  <mat-tab *ngFor="let i of list; let index = index">
     <ng-template mat-tab-label>
-      <span>{{i.title}}</span>
+      <span class="reuse-tab__name">{{i.title}}</span>
       <button mat-icon-button *ngIf="i.closable" class="tab_close" (click)="_close($event, index, false)">
         <mat-icon>close</mat-icon>
       </button>
     </ng-template>
   </mat-tab>
 </mat-tab-group>
-<reuse-tab-context (change)="cmChange($event)"></reuse-tab-context>

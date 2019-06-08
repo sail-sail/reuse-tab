@@ -1,5 +1,4 @@
 import { ActivatedRouteSnapshot } from '@angular/router';
-import { ReuseTabContextComponent } from './reuse-tab-context.component';
 
 /**
  * 复用匹配模式
@@ -67,23 +66,4 @@ export interface ReuseItem {
   last: boolean;
 }
 
-export interface ReuseContextEvent {
-  event: MouseEvent;
-  item: ReuseItem;
-  comp?: ReuseTabContextComponent;
-}
-
 export type CloseType = 'close' | 'closeOther' | 'closeRight' | 'clear' | null;
-
-export interface ReuseContextCloseEvent {
-  type: CloseType;
-  item: ReuseItem;
-  includeNonCloseable: boolean;
-}
-
-export interface ReuseContextI18n {
-  close?: string;
-  closeOther?: string;
-  closeRight?: string;
-  clear?: string;
-}

@@ -25,10 +25,8 @@ import {
   ReuseTabNotify,
   ReuseTabMatchMode,
   ReuseItem,
-  ReuseContextCloseEvent,
   ReuseTitle,
 } from './interface';
-import { ReuseTabContextService } from './reuse-tab-context.service';
 
 @Component({
   selector: 'reuse-tab',
@@ -36,7 +34,6 @@ import { ReuseTabContextService } from './reuse-tab-context.service';
   styleUrls: ["./reuse-tab.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush,
   preserveWhitespaces: false,
-  providers: [ReuseTabContextService],
 })
 export class ReuseTabComponent implements OnInit, OnChanges, OnDestroy {
   private sub$: Subscription;
@@ -186,26 +183,7 @@ export class ReuseTabComponent implements OnInit, OnChanges, OnDestroy {
       this.list.length === 0 ? 'none' : 'block',
     );
   }
-
-  // region: UI
-
-  cmChange(res: ReuseContextCloseEvent) {
-    switch (res.type) {
-      case 'close':
-        this._close(null, res.item.index, res.includeNonCloseable);
-        break;
-      case 'closeRight':
-        this.srv.closeRight(res.item.url, res.includeNonCloseable);
-        this.close.emit(null);
-        break;
-      case 'clear':
-      case 'closeOther':
-        this.srv.clear(res.includeNonCloseable);
-        this.close.emit(null);
-        break;
-    }
-  }
-
+  
   refStatus(dc = true) {
     if (this.list.length) {
       this.list[this.list.length - 1].last = true;
@@ -213,8 +191,8 @@ export class ReuseTabComponent implements OnInit, OnChanges, OnDestroy {
     }
     if (dc) this.cd.detectChanges();
   }
-
-  to(e: Event, index: number) {
+  
+  to(e: any, index: number) {
     if (e) {
       e.preventDefault();
       e.stopPropagation();
@@ -229,8 +207,8 @@ export class ReuseTabComponent implements OnInit, OnChanges, OnDestroy {
       this.change.emit(item);
     });
   }
-
-  _close(e: Event, idx: number, includeNonCloseable: boolean) {
+  
+  _close(e: any, idx: number, includeNonCloseable: boolean) {
     if (e) {
       e.preventDefault();
       e.stopPropagation();
@@ -280,4 +258,5 @@ export class ReuseTabComponent implements OnInit, OnChanges, OnDestroy {
     const t = this;
     t.to(null, index);
   }
+  
 }
