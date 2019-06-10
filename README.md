@@ -40,13 +40,13 @@ providers: [
 可复用：
 
 ```
-{ text:'Dashboard' }
 { text:'Dashboard', reuse: true }
 ```
 
 不可复用：
 
 ```
+{ text:'Dashboard' }
 { text:'Dashboard', reuse: false }
 ```
 
@@ -181,9 +181,5 @@ export class DemoComponent {
 `[fixed]` | 是否固定 | `boolean` | `true`
 `(close)` | 关闭回调 | `EventEmitter` | -
 `(change)` | 切换时回调，接收的参数至少包含：`active`、`list` 两个参数 | `EventEmitter` | -
-
-**右击菜单**
-
-当按下键盘 `ctrl` 时会强制移除不可关闭项。
 
 此项目参考自: <a href="https://ng-alain.com" target="_blank">ng-alain</a>
