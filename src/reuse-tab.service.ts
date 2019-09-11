@@ -7,7 +7,6 @@ import {
   ReuseTabNotify,
   ReuseTitle,
 } from './interface';
-import { MenuService } from './menu/menu.service';
 
 /**
  * 路由复用类，提供复用所需要一些基本接口
@@ -225,8 +224,7 @@ export class ReuseTabService implements OnDestroy {
     if (route && route.data && (route.data.titleI18n || route.data.title))
       return <ReuseTitle>{ text: route.data.title };
 
-    const menu = this.mode !== ReuseTabMatchMode.URL ? this.getMenu(url) : null;
-    return menu ? { text: menu.text } : { text: url };
+    return { text: url };
   }
 
   /**
@@ -262,11 +260,6 @@ export class ReuseTabService implements OnDestroy {
 
     if (route && route.data && typeof route.data.reuseClosable === 'boolean')
       return route.data.reuseClosable;
-
-    const menu = this.mode !== ReuseTabMatchMode.URL ? this.getMenu(url) : null;
-    if (menu && typeof menu.reuseClosable === 'boolean')
-      return menu.reuseClosable;
-
     return true;
   }
   /**
@@ -309,14 +302,10 @@ export class ReuseTabService implements OnDestroy {
       return route.data.reuse;
 
     if (this.mode !== ReuseTabMatchMode.URL) {
-      const menu = this.getMenu(url);
-      if (!menu) return false;
       if (this.mode === ReuseTabMatchMode.Menu) {
-        if (menu.reuse === false) return false;
-      } else {
-        if (!menu.reuse || menu.reuse !== true) return false;
+        return true;
       }
-      return true;
+      return false;
     }
     return this._excludes.findIndex(r => r.test(url)) === -1;
   }
@@ -345,14 +334,7 @@ export class ReuseTabService implements OnDestroy {
 
   constructor(
     private injector: Injector,
-    @Optional() private menuService: MenuService,
   ) {}
-
-  private getMenu(url: string) {
-    const menus = this.menuService ? this.menuService.getPathByUrl(url) : [];
-    if (!menus || menus.length === 0) return null;
-    return menus.pop();
-  }
 
   private runHook(method: string, url: string, comp: any) {
     if (comp.instance && typeof comp.instance[method] === 'function')

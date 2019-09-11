@@ -33,26 +33,22 @@ providers: [
 
 在项目的任何位置（建议：`startup.service.ts`）注入 `ReuseTabService` 类，并设置 `mode` 属性，或通过 `<reuse-tab [mode]="0"></reuse-tab>` 重新设置值，包括：
 
-**0、（推荐，默认值）Menu**
-
-按菜单 `Menu` 配置。
+**0、（推荐，默认值）**
 
 可复用：
 
 ```
+{ text:'Dashboard' }
 { text:'Dashboard', reuse: true }
 ```
 
 不可复用：
 
 ```
-{ text:'Dashboard' }
 { text:'Dashboard', reuse: false }
 ```
 
-**1、（推荐）MenuForce**
-
-按菜单 `Menu` 强制配置。
+**1、（推荐）**
 
 可复用：
 
