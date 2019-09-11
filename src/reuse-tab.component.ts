@@ -53,15 +53,6 @@ export class ReuseTabComponent implements OnInit, OnChanges, OnDestroy {
     this._debug = !!value;
   }
   private _debug = false;
-  /** 允许最多复用多少个页面 */
-  @Input()
-  get max() {
-    return this._max;
-  }
-  set max(value: any) {
-    this._max = Number(value);
-  }
-  private _max: number;
   /** 排除规则，限 `mode=URL` */
   @Input() excludes: RegExp[];
   /** 允许关闭 */
@@ -241,7 +232,6 @@ export class ReuseTabComponent implements OnInit, OnChanges, OnDestroy {
   ngOnChanges(
     changes: { [P in keyof this]?: SimpleChange } & SimpleChanges,
   ): void {
-    if (changes.max) this.srv.max = this.max;
     if (changes.excludes) this.srv.excludes = this.excludes;
     if (changes.mode) this.srv.mode = this.mode;
     this.srv.debug = this.debug;

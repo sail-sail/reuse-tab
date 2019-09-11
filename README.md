@@ -137,7 +137,6 @@ export class DemoComponent {
 
 参数 | 说明 | 类型 | 默认值
 ----|------|-----|------
-`[max]` | 允许最多复用多少个页面 | `number` | `10`
 `[mode]` | 设置匹配模式 | `ReuseTabMatchMode` | `0`
 `[debug]` | 是否Debug模式 | `boolean` | `false`
 `[excludes]` | 排除规则，限 `mode=URL` | `RegExp[]` | -

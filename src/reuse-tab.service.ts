@@ -15,7 +15,6 @@ import {
  */
 @Injectable({ providedIn: 'root' })
 export class ReuseTabService implements OnDestroy {
-  private _max = 10;
   private _debug = false;
   private _mode = ReuseTabMatchMode.Menu;
   private _excludes: RegExp[] = [];
@@ -34,13 +33,6 @@ export class ReuseTabService implements OnDestroy {
     return this.getUrl(this.injector.get(ActivatedRoute).snapshot);
   }
 
-  /** 允许最多复用多少个页面，取值范围 `2-100` */
-  set max(value: number) {
-    this._max = Math.min(Math.max(value, 2), 100);
-    for (let i = this._cached.length; i > this._max; i--) {
-      this._cached.pop();
-    }
-  }
   /** 设置匹配模式 */
   set mode(value: ReuseTabMatchMode) {
     this._mode = value;
@@ -362,7 +354,6 @@ export class ReuseTabService implements OnDestroy {
    * 存储
    */
   store(_snapshot: ActivatedRouteSnapshot, _handle: any) {
-    if (this.count >= this._max) this._cached.shift();
     const url = this.getUrl(_snapshot);
     const idx = this.index(url);
 
